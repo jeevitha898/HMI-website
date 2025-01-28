@@ -1,0 +1,155 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-image: url('/images/bg1.jpg'); /* Add your background image URL here */
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* Header Styling */
+header {
+    background: rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    text-align: center;
+    border-bottom: 3px solid #fff;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    color: #f5a623;
+    margin-bottom: 10px;
+}
+
+.logout-button {
+    color: #fff;
+    background-color: #e74c3c;
+    padding: 10px 20px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.logout-button:hover {
+    background-color: #c0392b;
+}
+
+/* Add Project Section */
+.add-project {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 30px;
+    margin: 30px auto;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.7);
+}
+
+.add-project h2 {
+    font-size: 2rem;
+    color: #f5a623;
+    margin-bottom: 20px;
+}
+
+.add-project form {
+    display: flex;
+    flex-direction: column;
+}
+
+.add-project input, .add-project button {
+    padding: 12px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: none;
+    font-size: 1rem;
+    outline: none;
+}
+
+.add-project input {
+    background-color: #fff;
+    color: #333;
+}
+
+.add-project button {
+    background-color: #f5a623;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.add-project button:hover {
+    background-color: #d4871c;
+}
+
+/* Project List Section */
+.project-list {
+    margin: 30px auto;
+    width: 80%;
+    max-width: 700px;
+}
+
+.project-list h2 {
+    font-size: 2rem;
+    color: #f5a623;
+    margin-bottom: 20px;
+}
+
+.project-list ul {
+    list-style: none;
+    padding: 0;
+}
+
+.project-list li {
+    background-color: rgba(0, 0, 0, 0.5);
+    margin-bottom: 10px;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.7);
+    transition: transform 0.3s ease;
+}
+
+.project-list li:hover {
+    transform: scale(1.05);
+}
+
+.project-list .delete-button {
+    color: #e74c3c;
+    font-size: 1.1rem;
+    margin-left: 15px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.project-list .delete-button:hover {
+    color: #c0392b;
+}
+
+/* Footer Styling */
+footer {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.form-button {
+    background-color: #3498db;
+    color: #fff;
+    padding: 12px 25px;
+    text-decoration: none;
+    font-size: 1.1rem;
+    border-radius: 30px;
+    transition: background-color 0.3s ease;
+}
+
+.form-button:hover {
+    background-color: #2980b9;
+}

@@ -1,0 +1,105 @@
+/* General body styling for a dark theme with a gradient background animation. */
+body {
+    margin: 0;
+    font-family: 'Libre Baskerville', serif; /* Elegant serif font for text. */
+    color: #e0e0e0; /* Light grey text for contrast. */
+    background: url('BG-image.jpg') no-repeat center center fixed; /* Set background image */
+    background-size: cover; /* Ensure the image covers the entire background */
+}
+
+/* Styling the header for a modern look with a gradient and shadow. */
+header {
+    display: flex;
+    align-items: center; /* Centers the content vertically. */
+    justify-content: space-between; /* Distributes items across the header. */
+    padding: 9px; /* Adds spacing around the content. */
+    background: linear-gradient(90deg, #121212, #2c2c2c, #454545); /* Subtle gradient for aesthetics. */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8); /* Drop shadow for a 3D effect. */
+}
+
+/* Logo styling with hover rotation animation for interactivity. */
+.logo img {
+    width: 80px; /* Restricts the logo size. */
+    transition: transform 0.8s; /* Smooth rotation effect. */
+}
+.logo img:hover {
+    transform: rotate(12deg); /* Rotates the logo slightly on hover. */
+}
+
+/* Title styling with a prominent font size and subtle shadow. */
+.header-title h1 {
+    margin: 0; /* Removes default margin. */
+    font-size: 2.5em; /* Large font for visibility. */
+    color: #f5f5f5; /* Light grey text for contrast. */
+    text-shadow: 3px 4px 5px rgba(0, 0, 0, 0.7); /* Shadow for depth. */
+}
+
+/* Navigation menu with hover effects for interactivity. */
+nav ul {
+    list-style: none; /* Removes default list bullets. */
+    display: flex; /* Aligns items horizontally. */
+    gap: 20px; /* Adds spacing between menu items. */
+    margin: 0; /* Removes default margin. */
+    padding: 0; /* Removes default padding. */
+}
+
+/* Link styling with smooth background and shadow transition effects. */
+nav ul li a {
+    text-decoration: none; /* Removes underline. */
+    color: #bbb; /* Subtle grey for links. */
+    padding: 10px 20px; /* Adds padding for a button-like feel. */
+    border-radius: 5px; /* Rounds corners for a modern look. */
+    transition: background 0.3s, color 0.3s, box-shadow 0.3s; /* Smooth hover effect. */
+}
+nav ul li a:hover {
+    background: #333; /* Dark background on hover. */
+    color: #f5f5f5; /* Light text color on hover. */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.8); /* Drop shadow for hover feedback. */
+}
+
+/* Main content area with a slightly lighter dark background and rounded corners. */
+main {
+    padding: 60px; /* Adds space around the content. */
+    background: rgba(40, 40, 40, 0.9); /* Slightly transparent background for layering. */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.9); /* Prominent shadow for separation. */
+    margin: 50px; /* Adds spacing from edges. */
+    border-radius: 30px; /* Rounds the corners significantly. */
+}
+
+/* Styling for headings with light text and a shadow for emphasis. */
+section h2 {
+    font-size: 2em; /* Slightly larger font for section headings. */
+    color: #f5f5f5; /* Light grey for visibility. */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Shadow for depth. */
+}
+
+/* Project and employee list containers with flexible wrapping for responsiveness. */
+#project-list, #employee-list {
+    display: flex;
+    flex-wrap: wrap; /* Allows items to wrap if needed. */
+    gap: 20px; /* Adds spacing between items. */
+}
+
+/* Card styling with smooth hover effects for interactivity. */
+.card {
+    background: #333; /* Dark grey for card background. */
+    padding: 20px; /* Adds inner spacing. */
+    border-radius: 10px; /* Rounded corners. */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.9); /* Prominent shadow for separation. */
+    transition: transform 0.3s, box-shadow 0.3s; /* Smooth hover effect. */
+}
+.card:hover {
+    transform: scale(1.05); /* Slight scaling for hover. */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 1); /* Stronger shadow on hover. */
+}
+
+/* Home section animation for moving text in and out. */
+
+	#home h2 {
+	    font-size: 1.8em; /* Reduced font size */
+	    font-family: 'Pacifico', cursive; /* Change to a more modern cursive font */
+	    animation: moveIn 2s ease-out infinite alternate; /* Keep animation */
+	}
+
+ 
+

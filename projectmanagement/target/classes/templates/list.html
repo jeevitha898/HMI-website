@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Employee List</title>
+    <link rel="stylesheet" href="list.css">
+</head>
+<body>
+    <header>
+        <h1>Employee Management</h1>
+        <a href="/home" class="home-button">Back to Home</a>
+    </header>
+
+    <section class="employee-list">
+        <h2>Employee Details</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Project</th>
+                    <th>Task</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <th:block th:each="employee : ${employees}">
+                    <tr>
+                        <td th:text="${employee.id}"></td>
+                        <td th:text="${employee.name}"></td>
+                        <td th:text="${employee.project}"></td>
+                        <td th:text="${employee.task}"></td>
+                        <td>
+                            <a th:href="'/deleteEmployee/' + ${employee.id}" class="delete-button">Delete</a>
+                        </td>
+                    </tr>
+                </th:block>
+            </tbody>
+        </table>
+    </section>
+</body>
+</html>

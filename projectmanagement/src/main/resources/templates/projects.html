@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Management</title>
+    <link rel="stylesheet" href="prj1.css">
+    <style>
+        /* Header and Navbar Styling */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #1f1f1f;
+            color: #fff;
+            padding: 10px 20px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-title {
+            font-size: 1.8em;
+            font-weight: bold;
+            text-align: center;
+            flex-grow: 1;
+        }
+
+        .navbar {
+            display: flex;
+            gap: 20px; /* Spacing between links */
+            justify-content: flex-end;
+            flex-grow: 2;
+        }
+
+        .navbar-link {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1em;
+            padding: 5px 10px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .navbar-link:hover {
+            background-color: #f50057;
+            border-radius: 8px;
+            color: #fff;
+        }
+
+        .logout-button {
+            color: #f50057;
+            font-weight: normal;
+        }
+    </style>
+</head>
+<body>
+    <!-- Updated Header -->
+    <header class="header">
+        <div class="header-title"></div>
+        <nav class="navbar">
+            <a href="/home" class="navbar-link">Home</a>
+            <a href="/projects" class="navbar-link">Projects</a>
+			<a href="/projects#project-list" class="navbar-link">Existing Project</a>
+            <a href="/form" class="navbar-link">Employee Form</a>
+            <a href="/logout" class="navbar-link logout-button">Logout</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Section for adding new projects -->
+        <section class="add-project">
+            <h2>Add a New Project</h2>
+            <form method="post" th:action="@{/addProject}" class="project-form">
+                <input type="text" name="name" placeholder="Project Name" required>
+                <input type="text" name="description" placeholder="Project Description" required>
+                <button type="submit" class="add-button">Add Project</button>
+            </form>
+        </section>
+
+        <!-- Section to display existing projects -->
+        <section class="project-list" id="project-list">
+            <h2>Existing Projects</h2>
+            <ul>
+                <th:block th:each="project : ${projects}">
+                    <li class="project-item">
+                        <strong th:text="${project.name}"></strong>: 
+                        <span th:text="${project.description}"></span>
+                        <!-- Delete button with confirmation -->
+                        <a th:href="@{/deleteProject/{id}(id=${project.id})}" 
+                           class="delete-button" 
+                           onclick="return confirm('Are you sure you want to delete this project?');">
+                            Delete
+                        </a>
+                    </li>
+                </th:block>
+            </ul>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <a href="/form" class="form-button">Go to Employee Form</a>
+    </footer>
+</body>
+</html>

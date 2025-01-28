@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Form</title>
+    <link rel="stylesheet" href="prj1.css">
+    <style>
+        /* Header and Navbar */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #1f1f1f;
+            color: #fff;
+            padding: 10px 20px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-title {
+            font-size: 1.8em;
+            font-weight: bold;
+            text-align: center;
+            flex-grow: 1;
+        }
+
+        .navbar {
+            display: flex;
+            gap: 20px; /* Spacing between links */
+            justify-content: flex-end;
+            flex-grow: 2;
+        }
+
+        .navbar-link {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1em;
+            padding: 5px 10px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .navbar-link:hover {
+            background-color: #ff4081;
+            border-radius: 8px;
+            color: #fff;
+        }
+
+        .logout-button {
+            color: #f50057;
+            font-weight: normal;
+        }
+
+        /* Body and Form */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #0a0a0a;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+            margin: 30px 0;
+            font-size: 2.5em;
+            text-transform: uppercase;
+            color: #ff4081;
+        }
+
+        form {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #1f1f1f;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+        }
+
+        input[type="text"], button {
+            width: 100%;
+            margin: 10px 0;
+            padding: 10px;
+            font-size: 1em;
+            border-radius: 8px;
+            border: none;
+        }
+
+        input[type="text"] {
+            background-color: #333;
+            color: #fff;
+            border: 2px solid #444;
+        }
+
+        input[type="text"]:focus {
+            outline: none;
+            border-color: #ff4081;
+        }
+
+        button {
+            background-color: #ff4081;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #f50057;
+        }
+
+        /* Employee List */
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 30px auto;
+            max-width: 600px;
+        }
+
+        li {
+            background-color: #2a2a2a;
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        li:hover {
+            background-color: #333;
+        }
+
+        .back-link {
+            display: block;
+            text-align: center;
+            margin: 20px 0;
+            text-decoration: none;
+            color: #ff4081;
+        }
+
+        .back-link:hover {
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-title"></div>
+        <nav class="navbar">
+            <a href="/home" class="navbar-link">Home</a>
+            <a href="/projects" class="navbar-link">Projects</a>
+            <a href="/home#employees" class="navbar-link">Employee Form</a>
+            <a href="/logout" class="navbar-link logout-button">Logout</a>
+        </nav>
+    </header>
+
+    <!-- Page Content -->
+    <h1>Employee Form</h1>
+    <form method="post" action="/addEmployee">
+        <input type="text" name="name" placeholder="Employee Name" required>
+        <input type="text" name="project" placeholder="Project" required>
+        <input type="text" name="task" placeholder="Task" required>
+        <button type="submit">Add Employee</button>
+    </form>
+
+    <h2 style="text-align: center;">Employees</h2>
+    <ul>
+        <th:block th:each="employee : ${employees}">
+            <li>
+                <span th:text="${employee.name}"></span> - 
+                <span th:text="${employee.project}"></span> - 
+                <span th:text="${employee.task}"></span>
+                <a th:href="'/deleteEmployee/' + ${employee.id}" style="color: #ff4081; text-decoration: none;">Delete</a>
+            </li>
+        </th:block>
+    </ul>
+
+    <div style="text-align: center;">
+        <a href="/exportToExcel">
+            <button style="width: auto; padding: 10px 20px;">Export to Excel</button>
+        </a>
+    </div>
+
+    <a href="/home" class="back-link">Back to Home</a>
+</body>
+</html>

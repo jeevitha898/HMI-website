@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BHEL HMI Department</title>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="h1.css">
+    <style>
+        /* Common styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #333;
+            color: #fff;
+            padding: 10px 20px;
+        }
+
+        .logo img {
+            height: 50px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 15px;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background: #333;
+            color: #fff;
+        }
+
+        /* Project List Animation */
+        #project-list {
+            display: flex;
+            overflow: hidden;
+            position: relative;
+            padding: 20px;
+            background: #2c2c2c;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.8);
+        }
+
+        .project-items {
+            display: flex;
+            animation: scroll-right 30s linear infinite;
+        }
+		body {
+		    margin: 0;
+		    font-family: 'Libre Baskerville', serif; /* Elegant serif font for text. */
+		    color: #e0e0e0; /* Light grey text for contrast. */
+		    background: url('/BG-image.jpg') no-repeat center center fixed; /* Set background image */
+		    background-size: cover; /* Ensure the image covers the entire background */
+		}
+		
+
+        #project-list .card {
+            flex-shrink: 0;
+            width: 200px;
+            padding: 15px;
+            margin: 0 10px;
+            background: #333;
+            color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.6);
+            text-align: center;
+        }
+
+        #project-list .card:hover {
+            transform: scale(1.05);
+            transition: transform 0.9s;
+        }
+
+        /* Employee List Animation */
+   
+		
+		/* Updated Employee List Animation */
+		#employee-list .employee-images {
+		    display: flex;
+		    flex-wrap: wrap;
+		    gap: 20px;
+		    justify-content: center;
+		}
+
+		#employee-list .card {
+		    flex-shrink: 0;
+		    width: 150px;
+		    text-align: center;
+		    padding: 10px;
+		    background: #fff;
+		    border-radius: 10px;
+		    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+		    overflow: hidden;
+		}
+
+		#employee-list .card img {
+		    width: 80px;
+		    height: 80px;
+		    object-fit: cover;
+		    border-radius: 50%;
+		    margin-bottom: 10px;
+		}
+
+		#employee-list .card h4 {
+		    font-size: 16px;
+		    margin: 5px 0;
+		    color: #333;
+		}
+
+		#employee-list .card p {
+		    font-size: 14px;
+		    color: #666;
+		}
+
+		
+        /* Animation for scrolling */
+        @keyframes scroll-right {
+            0% {
+                transform: translateX(0%);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+    </style>
+	
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="/bhel-logo.jpg" alt="BHEL Logo">
+        </div>
+        <div class="header-title">
+            <h1>BHEL HMI Department</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="/projects">Projects</a></li>
+                <li><a href="#employees">Employees</a></li>
+                <li><a href="/form">Form</a></li>
+				<li><a href="/documents">Documents</a></li>
+				
+                <li><a href="/logout" class="logout-button">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home">
+			<h2>Welcome to the HMI Department</h2>
+
+        </section>
+
+        <section id="projects">
+            <h2>Ongoing Projects</h2>
+            <div id="project-list">
+                <div class="project-items">
+                    <!-- Dynamically fetch and display projects -->
+                    <th:block th:each="project : ${projects}">
+                         <div class="card" style="background: #333; padding: 20px; border-radius: 10px; box-shadow: 0 6px 12px #424242; transition: transform 0.7s, box-shadow 0.3s;">
+                            <h3 th:text="${project.name}">Project Name</h3>
+                            <p th:text="${project.description}">Project Description</p>
+                        </div>
+                    </th:block>
+                    <!-- Duplicate cards for infinite scrolling -->
+                    <th:block th:each="project : ${projects}">
+						<div class="card" style="background: #333; padding: 20px; border-radius: 10px; box-shadow: 0 6px 12px #424242; transition: transform 0.7s, box-shadow 0.3s;">
+                            <h3 th:text="${project.name}">Project Name</h3>
+                            <p th:text="${project.description}">Project Description</p>
+                        </div>
+                    </th:block>
+					<!-- Duplicate cards for infinite scrolling -->
+					                  <th:block th:each="project : ${projects}">
+										<div class="card" style="background: #333; padding: 20px; border-radius: 10px; box-shadow: 0 6px 12px #424242; transition: transform 0.7s, box-shadow 0.3s;">
+					                          <h3 th:text="${project.name}">Project Name</h3>
+					                          <p th:text="${project.description}">Project Description</p>
+					                      </div>
+					                  </th:block>
+				
+            </div>
+        </section>
+
+		<section id="employees">
+		    <h2>HMI Engineers</h2>
+		    <div id="employee-list">
+		        <div class="employee-images">
+		            <div class="card" style="background-color: rgb(255, 255, 255); color: black;">
+		                <img src="/employee1.jpg" alt="Birendra Nath Sharma Sir">
+		                <h4>Birendra Nath Sharma</h4>
+		                <p>General Manager</p>
+		                <p>HMI Department</p>
+		            </div>
+		            <div class="card" style="background-color: #c2c2c2; color: black;">
+		                <img src="/employee1.jpg" alt="Anupama Ma'am">
+		                <h4>Anupama</h4>
+		                <p>General Manager</p>
+		                <p>HMI Department</p>
+		            </div>
+		            <div class="card" style="background-color: rgb(255, 255, 255); color: black;">
+		                <img src="/employee1.jpg" alt="Shilpa Ma'am">
+		                <h4>Shilpa</h4>
+		                <p>General Manager</p>
+		                <p>HMI Department</p>
+		            </div>
+		            <div class="card" style="background-color: #c2c2c2; color: black;">
+		                <img src="/employee1.jpg" alt="Jayafar Sir">
+		                <h4>Jayafar</h4>
+		                <p>General Manager</p>
+		                <p>HMI Department</p>
+		            </div>
+		            <div class="card" style="background-color: rgb(255, 255, 255); color: black;">
+		                <img src="/employee1.jpg" alt="Hariteja Sir">
+		                <h4>Hariteja</h4>
+		                <p>General Manager</p>
+		                <p>HMI Department</p>
+		            </div>
+		            <div class="card" style="background-color: #c2c2c2; color: black;">
+		                <img src="/employee1.jpg" alt="Shashi Sir">
+		                <h4>Sisir</h4>
+		                <p>General Manager</p>
+		                <p>HMI Department</p>
+		            </div>
+		            <div class="card" style="background-color: rgb(255, 255, 255); color: black;">
+		                <img src="/employee1.jpg" alt="Abhishek Sir">
+		                <h4>Abhishek</h4>
+		                <p>General Manager</p>
+		                <p>HMI Department</p>
+		            </div>
+		        </div>
+		    </div>
+		</section>
+
+    </main>
+
+    <footer>
+        <p>BHEL HMI Department &copy; 2024</p>
+    </footer>
+</body>
+</html>
