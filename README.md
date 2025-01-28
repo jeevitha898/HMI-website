@@ -6,10 +6,14 @@ This application is designed to streamline project management and employee track
 ---
 
 ### Features  
-- **Home Dashboard**: Overview of all ongoing projects and key metrics.  
-- **Project Management**: Add new projects with a name and description.  
-- **Employee Management**: Add employees, assign them to projects, and allocate tasks.  
-- **Data Export**: Export employee details to Excel for reporting and analysis.  
+- **Home Dashboard**: Overview of all ongoing projects.
+ ![Home](home.png)
+- **Project Management**: Add new projects with a name and description.
+   ![add-project](add-project.png)
+- **Employee Management**: Add employees, assign them to projects, and allocate tasks.
+   ![add-employee](add-employee-task.png) 
+- **Data Export**: Export employee details to Excel for reporting and analysis.
+-  ![export](export.png)
 - **Form Management**: Upload and manage important documents related to projects and employees.  
 - **Logout**: Secure user logout functionality.  
 
