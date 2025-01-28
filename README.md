@@ -13,7 +13,7 @@ This application is designed to streamline project management and employee track
 - **Employee Management**: Add employees, assign them to projects, and allocate tasks.
    ![add-employee](add-employee-task.png) 
 - **Data Export**: Export employee details to Excel for reporting and analysis.
--  ![export](export.png)
+  ![export](export.png)
 - **Form Management**: Upload and manage important documents related to projects and employees.  
 - **Logout**: Secure user logout functionality.  
 
